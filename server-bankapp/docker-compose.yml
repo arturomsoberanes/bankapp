@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    image: bankapp
+    ports: 
+      - 4000:4000
+    restart: always
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017

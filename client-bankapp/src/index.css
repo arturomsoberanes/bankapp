@@ -1,0 +1,15 @@
+*,*:before,*:after{
+  font-family:'poppins';
+}
+html body {
+  padding: 1px;
+}
+@media screen and (min-width:1500px){
+  .root {
+    min-height: 60vh;
+  }
+}
+.root {
+  min-height:50vh;
+}
+

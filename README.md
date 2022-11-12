@@ -6,6 +6,7 @@
 
 <p align="center">
   <a href="#dart-description">Description</a> &#xa0; | &#xa0; 
+  <a href="#dart-demo">Demo</a> &#xa0; | &#xa0;
   <a href="#art-technologies">Technologies</a> &#xa0; | &#xa0;
   <a href="#toolbox-installation">Installation</a> &#xa0; | &#xa0;
   <a href="#joystickhow-to-play">How to Play</a> &#xa0; | &#xa0;
@@ -21,6 +22,9 @@
 
 Bank App made with MongoDB, Express, React and Node.js
 
+## :dart: DEMO ##
+
+If you want to try it just click [here](http://ec2-54-210-48-140.compute-1.amazonaws.com/)
 
 
 ## :art: Technologies ##

@@ -2,8 +2,7 @@
 
 # dependencies
 /node_modules
-/client-bankapp/node_modules
-/server-bankapp/node_modules
+/public/node_modules
 /.pnp
 .pnp.js
 
@@ -11,8 +10,6 @@
 /coverage
 
 # production
-/client-bankapp/build
-/server-bankapp/public
 
 # misc
 .DS_Store
@@ -26,9 +23,9 @@ yarn-debug.log*
 yarn-error.log*
 
 #Keys
-/server-bankapp/src/middlewares/key.json
-/server-bankapp/src/middlewares/admin.js
+/src/middlewares/key.json
+/src/middlewares/admin.js
 
-/client-bankapp/src/firebaseapp.js
+/public/src/firebaseapp.js
 
 

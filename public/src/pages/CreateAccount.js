@@ -72,7 +72,7 @@ function CreateAccount() {
     let {name, email, password} = values;
     createUserWithEmailAndPassword(auth, email, password)
       .then( () => {
-        axios.post(`http://localhost:4000/users/create/${name}/${email}/${password}`)
+        axios.post(`/users/create/${name}/${email}/${password}`)
           .catch( e => {
             console.log(e)
             setStatus(e)

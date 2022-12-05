@@ -9,7 +9,7 @@ const { connection } = require('./src/bd-connection')
 const port = 4000;
 
 // Used to serve static files from public directory
-app.use(express.static('public'));
+app.use(express.static('public/build'));
 app.use(cors());
 
 // Connect to bd
@@ -21,7 +21,7 @@ app.use('/users', user)
 app.use('/movements', movements)
 
 app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname+'/public/index.html'));
+  res.sendFile(path.join(__dirname+'/public/build/index.html'));
 })
 
 app.listen(port, () => {

@@ -24,7 +24,7 @@ Bank App made with MongoDB, Express, React and Node.js
 
 ## :dart: DEMO ##
 
-If you want to try it just click [here](http://ec2-54-210-48-140.compute-1.amazonaws.com/)
+If you want to try it just click [here](http://ec2-54-158-110-103.compute-1.amazonaws.com/)
 
 
 ## :art: Technologies ##

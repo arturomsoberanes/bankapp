@@ -1,0 +1,233 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0", 
+    "title": "Bankapp",
+    "description": "API for get Data of User or Transactions, for use this API you will need a token access",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "ec2-54-158-110-103.compute-1.amazonaws.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Users",
+      "description": "api for users in the system"
+    },
+    {
+      "name": "Transactions",
+      "description": "api for transactions in the system"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/users/all/": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get all Users in system",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users/{email}/": {
+      "get": {
+        "tags": ["Users"],
+        "summary": "Get One Users in system",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "Email of user that we want to search",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users/create/{name}/{email}/{password}": {
+      "post": {
+        "tags": ["Users"],
+        "summary": "Create a new User",
+        "description": "Create new user in system",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "name of user that we want to create",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "email",
+            "in": "path",
+            "description": "name of user that we want to create",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "path",
+            "description": "name of user that we want to create",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "New User is created"
+          }
+        }
+      }
+    },
+    "/users/delete/{email}": {
+      "delete": {
+        "tags": ["Users"],
+        "description": "Delete a one user in system",
+        "summary": "Delete a User",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "Email of user that we want to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The user was deleted"
+          }
+        }
+      }
+    },
+    "/users/update/{email}/{balance}/{type}/{date}": {
+      "put": {
+        "tags": ["Users"],
+        "description": "Update user balance in system",
+        "summary": "Update a Balance of one User",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "Email of user that we want to updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "balance",
+            "in": "path",
+            "description": "New balance of user",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "description": "Type of transaction",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "date",
+            "in": "path",
+            "description": "Date of transaction",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "The user was updated"
+          }
+        }
+      }
+    },
+    "/movements/{email}": {
+      "get": {
+        "tags": ["Transactions"],
+        "description": "Get all transactions of one user in system",
+        "summary": "Get all transaction of one user",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "Email of user that we want get the transactions",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Transactions of user"
+          }
+        }
+      }
+
+    }
+  },
+  "definitions": {
+    "User": {
+      "required": ["name", "email", "password", "balance"],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "password": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "string"
+        }
+      }
+    },
+    "Transactions": {
+      "required": ["email", "balance", "password"],
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "balance": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+
+    }
+  }
+}
